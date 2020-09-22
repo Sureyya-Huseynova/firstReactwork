@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 
 export default class Card extends Component {
     render() {
+        const{DeleteCard, onSubmit, DeleteSelectitem}=this.props;
         return (
             <div>
                 <div className="todo">
-                    <p onClick={this.props.DeleteCard} className="deletetodo">X</p>
-                    <form onSubmit={this.props.onSubmit}>
+                    <p onClick={DeleteCard} className="deletetodo">X</p>
+                    <form onSubmit={onSubmit}>
                         <input type="text" placeholder="Enter your text" name="todotask" autoComplete="off" />
                         <button type="submit">Save</button>
                     </form>
                     <ul>
-                        <p onClick={this.props.DeleteSelectitem} className="deleteoneline">
+                        <p onClick={DeleteSelectitem} className="deleteoneline">
                             <i className="fas fa-trash"></i>
                         </p>
-
                         {
                             this.props.arr.map((item, index) => {
                                 return <li key={index}>
@@ -22,7 +22,6 @@ export default class Card extends Component {
                                     {item}
                                 </li>
                             })
-
                         }
                     </ul>
                 </div>

@@ -35,7 +35,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Card arr={this.state.arr} DeleteSelectitem={this.DeleteSelectitem} onSubmit={this.onSubmit} DeleteCard={this.DeleteCard}/>
       </div>
     )
